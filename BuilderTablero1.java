@@ -6,7 +6,7 @@ public class BuilderTablero1 extends BuilderTablero {
 	}
 
 	@Override
-	public void buildDimensionesTablero(Tablero tablero) {
-		tablero.setDimensionesTablero(7, 10, 10);
+	public void buildDimensionesTablero() {
+		super.tablero.setDimensionesTablero(7, 10, 10);
 	}
 }
