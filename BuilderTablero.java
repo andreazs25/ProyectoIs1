@@ -1,17 +1,20 @@
 package minesweeper3;
 
 public abstract class BuilderTablero {
-	
-	public BuilderTablero(){}
+protected Tablero tablero;
+
+	public BuilderTablero() {
+	}
 
 	public Tablero construirTableroPorNivel() {
-		Tablero tablero = new Tablero();
-		this.buildDimensionesTablero(tablero);
-		tablero.inicializarTablero();
+		this.tablero = new Tablero();
+		this.buildDimensionesTablero();
+		this.inicializarTablero();
 		return tablero;
 	}
 
-	public abstract void buildDimensionesTablero(Tablero tablero);
+	public abstract void buildDimensionesTablero();
+
 
 
 	// Coloca todas las minas, casillas vacias y con número independientemente
