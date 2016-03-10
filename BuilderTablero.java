@@ -192,15 +192,17 @@ protected Tablero tablero;
 
 	// Coloca minas en x lugares random independientemente del nivel
 	private void ponerMinas() {
-		for (int i = 0; i < this.tablero.getNumMinas(); i++) {
-			int fila = ((int) (Math.random() * this.tablero.getNumFilas()));
-			int columna = ((int) (Math.random() * this.tablero.getNumColumnas()));
+		for (int i = 0; i < this.getTableroBuilder().getNumMinas(); i++) {
+			int fila = ((int) (Math.random() * this.getTableroBuilder()
+					.getNumFilas()));
+			int columna = ((int) (Math.random() * this.getTableroBuilder()
+					.getNumColumnas()));
 
-			if (this.tablero.getTablero()[fila][columna] instanceof CasillaConMina) {
+			if (this.getTableroBuilder().getTablero()[fila][columna] instanceof CasillaConMina) {
 				i = i - 1;
 			} else {
-				this.tablero.getTablero()[fila][columna] = new CasillaConMina(
-						fila + 1, columna + 1);
+				this.getTableroBuilder().getTablero()[fila][columna] = FactoriaCasilla
+						.getFactoriaCasilla().crearCasilla(2);
 			}
 		}
 	}
