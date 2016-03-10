@@ -14,7 +14,7 @@ public class Tablero {
 		this.numDesveladas = 0;
 	}
 
-	// Métodos
+	// MÃ©todos
 	public void setDimensionesTablero(int pNumF, int pNumC, int pNumM) {
 		this.casillas = new Casilla[pNumF][pNumC];
 		this.numFilas = pNumF;
@@ -207,17 +207,17 @@ public class Tablero {
 		}
 	}
 
-	// En caso de descubrir casilla vacía, descubriremos las casillas vacías
+	// En caso de descubrir casilla vacÃ­a, descubriremos las casillas vacÃ­as
 	// adyacentes
 	private void descubrirCasillasAdy(int f, int c) {
 		this.casillas[f][c].descubrir();
 	}
 
-	// Descubre casilla en x posición
+	// Descubre casilla en x posiciÃ³n
 	// Si es con MINA --> PIERDES
 	// Si se han descubierto todas las que no tienen minas --> GANAS
-	// Si es con número --> SE DESCUBRE
-	// Si es vacía --> SE DESCUBRE y se DESCUBREN LAS VACIAS ADYACENTES
+	// Si es con nÃºmero --> SE DESCUBRE
+	// Si es vacÃ­a --> SE DESCUBRE y se DESCUBREN LAS VACIAS ADYACENTES
 	public void descubrirCasilla(int f, int c) {
 		this.numDesveladas = this.numDesveladas + 1;
 		if (this.casillas[f][c] instanceof CasillaConMina) {
@@ -261,6 +261,54 @@ public class Tablero {
 			}
 		}
 	}
+	
+	public void descubrirCasillasAdj1(int f, int c) {
+
+		this.descubrirCasillasAdj(f, c);
+	}
+
+	// En caso de descubrir casilla vacÃ­a, descubriremos las casillas vacÃ­as
+	// adyacentes
+	private void descubrirCasillasAdj(int f, int c) {
+
+		if (this.getTablero()[f][c] instanceof CasillaVacia) {
+			if (f - 1 > 0) {
+				descubrirCasillasAdj(f - 1, c);
+			} else if (c + 1 <= this.getNumColumnas() && f - 1 > 0) {
+				descubrirCasillasAdj(f - 1, c + 1);
+
+			} else if (c + 1 <= this.getNumColumnas()) {
+				descubrirCasillasAdj(f, c + 1);
+
+			} else if (f + 1 <= this.getNumFilas()
+					&& c + 1 <= this.getNumColumnas()) {
+				descubrirCasillasAdj(f + 1, c + 1);
+			} else if (f + 1 <= this.getNumFilas()) {
+				descubrirCasillasAdj(f + 1, c);
+			} else if (f + 1 <= this.getNumFilas() && c - 1 > 0) {
+				descubrirCasillasAdj(f + 1, c - 1);
+
+			} else if (c - 1 > 0) {
+				descubrirCasillasAdj(f, c - 1);
+			} else if (f - 1 > 0 && c - 1 > 0) {
+				descubrirCasillasAdj(f - 1, c - 1);
+			}
+			System.out.println("soyVacia");
+
+		} else if (this.getTablero()[f][c] instanceof CasillaConNumero) {
+			System.out.println("soy numero");
+		} else {
+			System.out.println("soy mina");
+		}
+
+	}
+
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * //En caso de descubrir todas las casillas que no son minas, ganamos
