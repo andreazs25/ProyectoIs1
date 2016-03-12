@@ -9,7 +9,7 @@ public class Buscaminas {
 	//Constructor
 	private Buscaminas(){}
 	
-	//Métodos
+	//MÃ©todos
 	public static Buscaminas getBuscaminas(){
 		if (miBuscaminas==null){
 			miBuscaminas= new Buscaminas();
@@ -30,5 +30,9 @@ public class Buscaminas {
 			this.constructorTablero = new BuilderTablero3();
 			tablero = this.constructorTablero.construirTableroPorNivel();
 		}
+	}
+	
+	public Tablero getTablero() {
+	return this.tablero;
 	}
 }
