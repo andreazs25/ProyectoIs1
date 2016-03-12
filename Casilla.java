@@ -7,8 +7,12 @@ public class Casilla {
 	// Constructor
 	public Casilla() {}
 
-	// Métodos
+	// MÃ©todos
 	public void descubrir() {
 		this.descubierta = true;
+	}
+	
+	public boolean estaDescubierta() {
+		return this.descubierta;
 	}
 }
