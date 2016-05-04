@@ -1,4 +1,4 @@
-package minesweeper3;
+package minesweeper;
 
 public class FactoriaCasilla {
 	private static FactoriaCasilla miFactoriaCasilla = null;

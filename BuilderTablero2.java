@@ -1,4 +1,4 @@
-package minesweeper3;
+package minesweeper;
 
 public class BuilderTablero2 extends BuilderTablero {
 
@@ -7,6 +7,6 @@ public class BuilderTablero2 extends BuilderTablero {
 
 	@Override
 	public void buildDimensionesTablero() {
-		super.tablero.setDimensionesTablero(10, 15, 30);
+		this.tablero = new Tablero(10, 15, 30);
 	}
 }

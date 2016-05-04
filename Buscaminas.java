@@ -1,15 +1,14 @@
-package minesweeper3;
+package minesweeper;
 
 public class Buscaminas {
 	//Atributos
 	private Tablero tablero;
 	private static Buscaminas miBuscaminas = null;
-	private BuilderTablero constructorTablero;
 	
 	//Constructor
 	private Buscaminas(){}
 	
-	//MÃ©todos
+	//Métodos
 	public static Buscaminas getBuscaminas(){
 		if (miBuscaminas==null){
 			miBuscaminas= new Buscaminas();
@@ -18,21 +17,22 @@ public class Buscaminas {
 	}
 	
 	public void construirTableroPorNivel(int pNivel){
-		if (pNivel == 1){
-			this.constructorTablero = new BuilderTablero1();
-			tablero = this.constructorTablero.construirTableroPorNivel();
-		}
-		else if (pNivel == 2){
-			this.constructorTablero = new BuilderTablero2();
-			tablero = this.constructorTablero.construirTableroPorNivel();
-		}
-		else{
-			this.constructorTablero = new BuilderTablero3();
-			tablero = this.constructorTablero.construirTableroPorNivel();
-		}
+			this.tablero = DirectorTablero.getDirectorTablero().getTablero(pNivel);
 	}
 	
-	public Tablero getTablero() {
-	return this.tablero;
+	public Tablero getablero(){
+		return this.tablero;
+	}
+	
+	public void descubrirCasilla(int pF, int pC){
+		this.tablero.descubrirCasilla(pF, pC);
+	}
+	
+	public void marcarDesmarcarCasilla(int pF, int pC){
+		this.tablero.marcarDesmarcarCasilla(pF, pC);
+	}
+	
+	public Casilla obtenerCasilla(int pF, int pC){
+		return this.getablero().obtenerCasilla(pF, pC);
 	}
 }

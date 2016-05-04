@@ -1,0 +1,37 @@
+Sergio;820;0;0
+Sinthia;25;0;0
+Andoni;40;800;0
+Andrea;790;0;0
+Ian;480;0;0
+Pedro;400;0;0
+Ivan;142;0;0
+Diana;800;0;0
+Emil;670;0;0
+Sara;50;0;0
+Rebeca;0;0;0
+Pepi;0;0;0
+Roberto;0;0;0
+Dani;680;0;0
+Fernando;0;0;0
+Perro Azul;63;750;0
+Binota;66;0;0
+Sergia;0;0;0
+Alberto;33;0;0
+Octopus;28;0;0
+Spider-man;50;0;0
+Perro Morado;500;0;0
+Brianeno;35;0;0
+Pepe;325;0;0
+BobEsponja;255;0;0
+BarcoRumbo;300;0;0
+Muerte;600;0;0
+Grimes;670;0;0
+Sir Lanka;355;300;0
+Hernesto;710;0;0
+Pepito;550;0;0
+Peludo;530;0;0
+Marta;620;470;155
+Malo;27;0;0
+Mowai;640;0;0
+Andro;43;0;0
+Perro;810;0;0

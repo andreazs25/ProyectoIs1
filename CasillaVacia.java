@@ -1,4 +1,4 @@
-package minesweeper3;
+package minesweeper;
 
 public class CasillaVacia extends Casilla {
 
